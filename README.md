@@ -1,4 +1,2 @@
-# League of Legends: Pro Player Analytics
-Final Project for DSC80
-
 ## League of Legends Overview
+**League of Legends** is a Multiplayer Online Battle Arena (MOBA) developed by Riot games where two teams of five fight to destroy each other's base, or "Nexus." It is a widely known game and there are many professional leagues that compete in this esport, leading to the creation of the data set that we will be working with from Oracle's Elixer. We will specifically be looking at the 2025 data set, which can be found [here](https://oracleselixir.com/tools/downloads)
