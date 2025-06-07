@@ -130,6 +130,26 @@ After performing our second permutation test, we get a p-value = 1.0.  This is v
 Against our significance level of .05, we fail to reject the null hypothesis. There is not enough evidence to conclude that the distribution of `side` is from when `goldat25` is missing and when it is not missing. 
 
 ### Hypothesis Testing
+We will see if there is a difference in win rate for pro teams starting on blue side and pro teams starting on red side. Understanding whether a side offers a consistent advantage is important for balancing the game and team strategy. 
+
+**Null:** The true win rate for teams on blue side is the same as the true win rate for teams on the red side
+
+**Alternate:** The true win rate for teams on blue side is greater than the true win rate for teams on the red side
+
+**Test Statistic:** The sample proportion of wins on blue side minus the sample proportion of wins on the red side
+
+**Significane Level/Alpha:** .05
+
+A histogram of the permutation test is pictured below, alongside a dotted vertical line of the observed difference in true win rate in our dataset. 
+
+<iframe
+  src="assets/plot5.html"
+  width="800"
+  height="450"
+  frameborder="0"
+></iframe>
+
+My observed statistic was around .07. After simulating null 1000 times and comparing the observed statistic to the calculated difference in proportions for each simulation, I got a **p-value = 0.0**. We **reject the null hypothesi**s** and accept the alternate. There is statistically significant evidence that the true win rate for teams on blue side is greater than the true win rate for for teams on red side.
 
 ### Framing a Prediction Problem
 
