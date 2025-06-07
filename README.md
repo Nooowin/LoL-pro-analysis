@@ -50,7 +50,7 @@ We will perform univariate analysis on `kills` statistic.
 <iframe
   src="assets/plot1.html"
   width="800"
-  height="450"
+  height="425"
   frameborder="0"
 ></iframe>
 
@@ -61,7 +61,7 @@ We will perform bivariate analysis on `result` (win/loss) and `side` (blue/red)
 <iframe
   src="assets/plot2.html"
   width="800"
-  height="450"
+  height="425"
   frameborder="0"
 ></iframe>
 
@@ -101,7 +101,7 @@ After performing the permutation test, the observed statistic is around 610. We 
 <iframe
   src="assets/plot3.html"
   width="800"
-  height="450"
+  height="425"
   frameborder="0"
 ></iframe>
 
@@ -123,7 +123,7 @@ After performing our second permutation test, we get a p-value = 1.0.  This is v
 <iframe
   src="assets/plot4.html"
   width="800"
-  height="450"
+  height="425"
   frameborder="0"
 ></iframe>
 
@@ -145,7 +145,7 @@ A histogram of the permutation test is pictured below, alongside a dotted vertic
 <iframe
   src="assets/plot5.html"
   width="800"
-  height="450"
+  height="425"
   frameborder="0"
 ></iframe>
 
@@ -191,8 +191,11 @@ The final model now has an **F1-Score of .8892**, an improvement on our base mod
 **Note:** Base model's accuracy was .8403. Our final model's accuracy has improved to .8914!
 
 ### Fairness Analysis
-We will see if our final model is fair for different groups. In particular, we will be looking at ADCs with low kills (less than 7) and ADCs with higher kills (7 or more).
-We will run a permutation test to see if there is a difference here. Our evaluation metric here will be **precision**.
+We will see if our final model is fair for different groups. In particular, we will be looking at:
+**Group X:** ADCs with low kills (less than 7) 
+**Group Y:** ADCs with higher kills (7 or more)
+
+We will run a permutation test to see if there is a difference here. Our evaluation metric will be **precision**.
 
 These are our hypotheses below:
 
@@ -209,8 +212,8 @@ Below is a visualization of our permutation test:
 <iframe
   src="assets/plot6.html"
   width="800"
-  height="450"
+  height="425"
   frameborder="0"
 ></iframe>
 
-We got a p-value of .044, which is less than our significance level of .05. As a result, we reject the null hypothesis. There is statisically signifcant evidence that our model's performance differs for ADCs with less than 7 kills and ADCs with 7 or more kills.
+We got a p-value of .044, which is less than our significance level of .05. As a result, we reject the null hypothesis. There is statisically signifcant evidence that our model's performance differs for ADCs with less than 7 kills and ADCs with 7 or more kills. Higher-kill ADCs have more potential to take over and dominate a game. Games where ADCs have lower kills will have more variability where macro-level decisions, teammate performance, and objective control may become more important. 
