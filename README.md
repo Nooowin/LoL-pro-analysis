@@ -177,6 +177,18 @@ We split the data into training and test data, 20% going to test data. We did th
 **But can we improve on our base model's performance?**
 
 ### Final Model
+We added on two more quantitative variables: `damageshare` and `assists`.
+On top of `kills` and `deaths`, `assists` are also an important statistic for ADCs. 
+Even if players can't successfully get kills, assists showcase higher participation in team fights and can indicate sustained damage. 
+`damageshare` is the percentage of the total team's damage by a single player. ADCs with higher damageshares generally have better influence and impact on a game, being able to "carry" a better offensive load and potentially lead a team to victory. Sometimes, when you have a high kill count, your damage output could still be low if you are consistently **kill-stealing (KS)**, landing the final blow on an enemy champion even if another teammate did most of the damage. 
+Similar to the features in the base model, we will use **StandardScaler** Transformer on `assists` for similar reasons. However, we will leave `damageshare` alone as it is already on a fixed scale (0 to 1).
+
+Our final model instead will be Random Forest Classifier. Not only did we choose another model, we performed **GridSearchCV** to find the best hyperparameters for this model. We choose 3 hyperparameters: **max depth**, **minimum number of samples required to split a node**, and  **criterion (gini or entropy)**.
+After running the grid search, with a cv (cross-validation) of 5, we found the best hyperparameters were a max depth of 30, a minimum sample split of 20, and an entropy criterion when splitting nodes. 
+
+The final model now has an **F1-Score of .8892**, an improvement on our base model. 
+
+**Note:** Base model's accuracy was .8403. Our final model's accuracy has improved to .8914!
 
 ### Fairness Analysis
 
