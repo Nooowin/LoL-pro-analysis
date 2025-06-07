@@ -157,11 +157,12 @@ In a LoL game, the ADC, attack damage carry, is supposed to be, well, the "carry
 This is a binary classification problem. We aim to predict the outcome of a match (win or lose) using the player-level game statistics for a team's ADC. 
 Our response variable here is `result`, which is either 1 (win) or 0 (lose). This column directly matches what we are looking for here. 
 
-We will use the following features for this problem: `kills`, `deaths`, `earnedgold`
-These features are all quantitative, but depending on the length of a game, these numbers could differ. We are going to use **StandardScaler** on these features.
+We will use the following features for this problem (in our new dataframe described shortly below): `kills`, `deaths`, `earnedgold`, `damageshare`, `assists`
 
 The dataset could be imbalanced, so we will opt to look at the F1-score as a suitable metric here. F1-score is able to balance precision and recall well. 
+
 **Precision:** The proportion of predicted wins that are actually wins.
+
 **Recall:** The proportion of actual wins that were correctly predicted.
 
 We will look at the complete_LoL, the intermediary dataframe, made before creating another dataframe, **prediction_LoL**, to use for our prediction problem as we need access to player-level statistics instead of team-level statistics now.
@@ -169,6 +170,11 @@ We will look at the complete_LoL, the intermediary dataframe, made before creati
 **Note:** We will NOT be using final_LoL here
 
 ### Baseline Model
+For the baseline model, we will be using a logistic regression model. The features we will be using here are: `kills`, `deaths`, and `earnedgold`.
+These features are all quantitative, but depending on the length of a game, these numbers could differ drastically. We are going to use **StandardScaler** Transformer on these features to standardize them. 
+We split the data into training and test data, 20% going to test data. We did this by using the train_test_split function in sklearn. After fitting the model, we got an **F1-Score of .8389.** Our logistic regression model performed quite well, able to balance and precision and recall at a high level. 
+
+**But can we improve on our base model's performance?**
 
 ### Final Model
 
