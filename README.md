@@ -81,8 +81,8 @@ This is important because it suggests that being on blue side may have an associ
 
 ### Assessment of Missingness
 #### NMAR Analysis
-Columns I believe to be NMAR, Not Missing at Random, in my dataset (original LoL dataset) are the ban columns: **ban1**, **ban2**, **ban3**, **ban4**, and **ban5**. Some players may just choose not to ban any champions, so there are no visible trends in the dataset that indicate whether or not a value in one of these columns will be missing. There are unobserved reasons why these values are missing such as being forgetful, player intent, or maybe even strategy. 
-To make this MAR, Missing At Random, I could add a column named **used_bans** that records the number of bans a team uses (between 0-5). The missingness in the ban columns could then be explained by this newly introduced column, making it MAR.
+Columns we believe to be NMAR, Not Missing at Random, in my dataset (original LoL dataset) are the ban columns: **ban1**, **ban2**, **ban3**, **ban4**, and **ban5**. Some players may just choose not to ban any champions, so there are no visible trends in the dataset that indicate whether or not a value in one of these columns will be missing. There are unobserved reasons why these values are missing such as being forgetful, player intent, or maybe even strategy. 
+To make this MAR, Missing At Random, we could add a column named **used_bans** that records the number of bans a team uses (between 0-5). The missingness in the ban columns could then be explained by this newly introduced column, making it MAR.
 
 #### Missingness Dependency
 We are going to test if the missingness of `goldat25` depends on other columns. Namely, we will be looking at `gamelength` and `side`.
