@@ -45,6 +45,8 @@ The head of the **final_LoL** dataframe is below:
 | LOLTMNT06_95160  | Blue   | team       |        0 |      18 |       22 |        30 |           nan |        3 |         0 |         0 |        0 |        31835 |      42735 |         1782 |             1 |
 ```
 #### Univariate Analysis
+We will perform univariate analysis on `kills` statistic.
+
 <iframe
   src="assets/plot1.html"
   width="800"
@@ -52,7 +54,10 @@ The head of the **final_LoL** dataframe is below:
   frameborder="0"
 ></iframe>
 
+The distribution of the histogram of `kills` is nearly normal and slightly skewed to the right. This shows that `kills` is well-balanced and is fit for our statistical analysis.
+
 #### Bivariate Analysis
+We will perform bivariate analysis on `result` (win/loss) and `side` (blue/red)
 <iframe
   src="assets/plot2.html"
   width="800"
@@ -60,8 +65,18 @@ The head of the **final_LoL** dataframe is below:
   frameborder="0"
 ></iframe>
 
+We see that blue side wins slightly more often than red side. This suggests that there may be a potential advantage to being on blue side. 
 
 #### Interesting Aggregates
+Below in the pivot table, we can see some interesting aggregates when we index our pivot table **LoL_aggregates** by `side`
+```markdown
+| side   |   assists |   barons |   deaths |   dragons |   earnedgold |    goldat25 |   heralds |   kills |
+|:-------|----------:|---------:|---------:|----------:|-------------:|------------:|----------:|--------:|
+| Blue   |    180060 |     2567 |    76081 |      9628 |  1.82683e+08 | 1.99899e+08 |      2863 |   79438 |
+| Red    |    170348 |     2407 |    79644 |     11368 |  1.78826e+08 | 1.9741e+08  |      1864 |   75879 |
+```
+
+We created a pivot table showing total stats and objectives for blue and red side. Surprisingly, contrary to in-game logic, red seems to have better dragon control. However, blue outperforms red side in every other category: more barons, less deaths, more gold (overall and at 25), more heralds, more assists, and more kills.
 
 ### Assessment of Missingness
 
