@@ -50,7 +50,7 @@ We will perform univariate analysis on `kills` statistic.
 <iframe
   src="assets/plot1.html"
   width="800"
-  height="600"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -61,7 +61,7 @@ We will perform bivariate analysis on `result` (win/loss) and `side` (blue/red)
 <iframe
   src="assets/plot2.html"
   width="800"
-  height="600"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -101,7 +101,7 @@ After performing the permutation test, the observed statistic is around 610. We 
 <iframe
   src="assets/plot3.html"
   width="800"
-  height="600"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -123,7 +123,7 @@ After performing our second permutation test, we get a p-value = 1.0.  This is v
 <iframe
   src="assets/plot4.html"
   width="800"
-  height="600"
+  height="450"
   frameborder="0"
 ></iframe>
 
