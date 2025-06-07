@@ -13,9 +13,21 @@ These questions highlight the metrics that truly go into success in a LoL game a
 
 #### Dataset
 The dataset proves team-level and player-level metrics for pro players. In the 2025 dataset, there are 62292 rows and 161 columns. Here are some of the key columns that we will need for our project:
-- 'gameid': 
-- '
-
+- `gameid`: unique identifer for a LoL match
+- `side`: which side the team started on - either "blue" or "red"
+- `position`: in-game role of a player: "top", "mid", "bot"/ADC, "jng", and "sup"
+- `result`: whether a team won (1) or lost (0)
+- `kills`: number of enemy champions a player killed/eliminated
+- `deaths`: number of times a player was killed/eliminated
+- `assists`: number of times a player contributed to killing/eliminating an enemy champion without getting the kill themselves
+- `damageshare`: percentage of the team's total damage dealt done by a single player
+- `towers`: number of enemy turrets destroyed by a team
+- `dragons`: number of dragons secured by a team
+- `heralds`: number of heralds (Rift Heralds) secured by a team, usually a good early-game objective
+- `barons`: number of barons (Baron Nashors) secured by a team, usually a good late-game objective
+- `earnedgold`: total gold earned by a player
+- `goldat25`: total gold a player had at the 25-minute mark
+- `gamelength`: how long the match was
 
 ### Data Cleaning and Exploratory Data Analysis
 
