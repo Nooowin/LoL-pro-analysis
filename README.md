@@ -45,8 +45,21 @@ The head of the **final_LoL** dataframe is below:
 | LOLTMNT06_95160  | Blue   | team       |        0 |      18 |       22 |        30 |           nan |        3 |         0 |         0 |        0 |        31835 |      42735 |         1782 |             1 |
 ```
 #### Univariate Analysis
+<iframe
+  src="assets/plot1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 #### Bivariate Analysis
+<iframe
+  src="assets/plot2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 
 #### Interesting Aggregates
 
