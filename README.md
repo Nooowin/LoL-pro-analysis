@@ -192,7 +192,9 @@ The final model now has an **F1-Score of .8892**, an improvement on our base mod
 
 ### Fairness Analysis
 We will see if our final model is fair for different groups. In particular, we will be looking at:
+
 **Group X:** ADCs with low kills (less than 7) 
+
 **Group Y:** ADCs with higher kills (7 or more)
 
 We will run a permutation test to see if there is a difference here. Our evaluation metric will be **precision**.
