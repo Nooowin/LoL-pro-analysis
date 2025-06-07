@@ -152,20 +152,20 @@ A histogram of the permutation test is pictured below, alongside a dotted vertic
 My observed statistic was around .07. After simulating null 1000 times and comparing the observed statistic to the calculated difference in proportions for each simulation, I got a **p-value = 0.0**. We **reject the null hypothesis** and accept the alternate. There is statistically significant evidence that the true win rate for teams on blue side is greater than the true win rate for for teams on red side.
 
 ### Framing a Prediction Problem
-In a LoL game, the ADC, attack damage carry, is supposed to be, well, the "carry." They are supposedly supposed to the be the most impactful role of the game, usually outputting the most damage. Their stats can serve as a strong indicator of a team's overall performance, which leads us into the following prediction problem.
+In a LoL game, the ADC, attack damage carry, is supposed to be, well, the "carry." They are supposed to be the most impactful role in the game, usually outputting the most damage. Their stats can serve as a strong indicator of a team's overall performance, which leads us into the following prediction problem.
 **Prediction Problem: Can we predict win/loss based on the in-game stats of the ADC (attack damage carry)?**
 This is a binary classification problem. We aim to predict the outcome of a match (win or lose) using the player-level game statistics for a team's ADC. 
 Our response variable here is `result`, which is either 1 (win) or 0 (lose). This column directly matches what we are looking for here. 
 
 We will use the following features for this problem: `kills`, `deaths`, `earnedgold`
-
 These features are all quantitative, but depending on the length of a game, these numbers could differ. We are going to use **StandardScaler** on these features.
 
 The dataset could be imbalanced, so we will opt to look at the F1-score as a suitable metric here. F1-score is able to balance precision and recall well. 
-**Precision:** The proportion of predicted wins that are actually wins
+**Precision:** The proportion of predicted wins that are actually wins.
 **Recall:** The proportion of actual wins that were correctly predicted.
 
 We will look at the complete_LoL, the intermediary dataframe, made before creating another dataframe, **prediction_LoL**, to use for our prediction problem as we need access to player-level statistics instead of team-level statistics now.
+
 **Note:** We will NOT be using final_LoL here
 
 ### Baseline Model
