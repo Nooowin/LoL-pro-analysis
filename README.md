@@ -30,6 +30,24 @@ The dataset proves team-level and player-level metrics for pro players. In the 2
 - `gamelength`: how long the match was
 
 ### Data Cleaning and Exploratory Data Analysis
+We will make a new dataframe called **final_LoL** with the columns mentioned above. We will remove games labeled with "partial" in the `datacompleteness` column. These rows have missing data in multiple columns, so we will just remove them entirely. In the original dataset, each `gameid` corresponds to 12 rows - one for each of the 5 players of each team and 2 with team-level summary statistics. For the majority of this project, we will be working with primarily team-level statistics, so any rows corresponding to individual players or champions will be dropped. 
+When inspecting the dataframe, we can see that `towers`, `dragons`, and `heralds` have similar missing mechanisms. Each of the statistics corresponding to a individual for these columns are missing and are just filled in the team-level summaries. To achieve a dataframe with only team-level summary statistics, we will any rows where the data for these columns are missing.
+
+The head of the **final_LoL** dataframe is below:
+<bound method DataFrame.to_markdown of               gameid  side position  result  ...  earnedgold  goldat25  \
+10  LOLTMNT03_179647  Blue     team       0  ...       24639   39226.0   
+11  LOLTMNT03_179647   Red     team       1  ...       36320   46192.0   
+22   LOLTMNT06_96134  Blue     team       1  ...       43687   47876.0   
+23   LOLTMNT06_96134   Red     team       0  ...       29697   39499.0   
+34   LOLTMNT06_95160  Blue     team       0  ...       31835   42735.0   
+
+    gamelength  side_number  
+10        1592            1  
+11        1592            0  
+22        1922            1  
+23        1922            0  
+34        1782            1  
+
 
 ### Assessment of Missingness
 
