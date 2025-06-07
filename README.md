@@ -34,19 +34,13 @@ We will make a new dataframe called **final_LoL** with the columns mentioned abo
 When inspecting the dataframe, we can see that `towers`, `dragons`, and `heralds` have similar missing mechanisms. Each of the statistics corresponding to a individual for these columns are missing and are just filled in the team-level summaries. To achieve a dataframe with only team-level summary statistics, we will any rows where the data for these columns are missing.
 
 The head of the **final_LoL** dataframe is below:
-<bound method DataFrame.to_markdown of               gameid  side position  result  ...  earnedgold  goldat25  \
-10  LOLTMNT03_179647  Blue     team       0  ...       24639   39226.0   
-11  LOLTMNT03_179647   Red     team       1  ...       36320   46192.0   
-22   LOLTMNT06_96134  Blue     team       1  ...       43687   47876.0   
-23   LOLTMNT06_96134   Red     team       0  ...       29697   39499.0   
-34   LOLTMNT06_95160  Blue     team       0  ...       31835   42735.0   
-
-    gamelength  side_number  
-10        1592            1  
-11        1592            0  
-22        1922            1  
-23        1922            0  
-34        1782            1  
+| gameid           | side   | position   |   result |   kills |   deaths |   assists |   damageshare |   towers |   dragons |   heralds |   barons |   earnedgold |   goldat25 |   gamelength |   side_number |
+|:-----------------|:-------|:-----------|---------:|--------:|---------:|----------:|--------------:|---------:|----------:|----------:|---------:|-------------:|-----------:|-------------:|--------------:|
+| LOLTMNT03_179647 | Blue   | team       |        0 |       3 |       13 |         5 |           nan |        3 |         0 |         0 |        0 |        24639 |      39226 |         1592 |             1 |
+| LOLTMNT03_179647 | Red    | team       |        1 |      13 |        3 |        36 |           nan |        9 |         2 |         1 |        1 |        36320 |      46192 |         1592 |             0 |
+| LOLTMNT06_96134  | Blue   | team       |        1 |      21 |       11 |        53 |           nan |       11 |         3 |         1 |        1 |        43687 |      47876 |         1922 |             1 |
+| LOLTMNT06_96134  | Red    | team       |        0 |      10 |       21 |        22 |           nan |        2 |         2 |         0 |        0 |        29697 |      39499 |         1922 |             0 |
+| LOLTMNT06_95160  | Blue   | team       |        0 |      18 |       22 |        30 |           nan |        3 |         0 |         0 |        0 |        31835 |      42735 |         1782 |             1 |
 
 
 ### Assessment of Missingness
