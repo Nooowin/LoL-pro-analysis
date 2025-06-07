@@ -96,12 +96,38 @@ The mean of `gamelength` when `goldat25` is missing is the same as the mean of `
 **Alternate:**
 The mean of `gamelength` when `goldat25` is missing is NOT the same as the mean of `gamelength` when `goldat25` is not missing
 
+After performing the permutation test, the observed statistic is around 610. We get p-value = 0.0. This is visualized below.
+
 <iframe
   src="assets/plot3.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+Against our significance level of .05, we reject the null hypothesis. There is statistically signifant evidence that the mean of `gamelength` when `goldat25` is missing is NOT the same as when `goldat25` is not missing.
+
+
+Now, we will look at `goldat25` and `side`
+
+**Null:**
+The distribution of `side` when `goldat25` is missing is the same as the distribution of `side` when `goldat25` is not missing
+
+**Alternate:**
+The distribution of `side` when `goldat25` is missing is NOT the same as the distribution of `side` when `goldat25` is not missing
+
+**Note**: We will create a new column, **side_number** and encode blue side as integer 1, and red side as integer 0
+
+After performing our second permutation test, we get a p-value = 1.0.  This is visualized below.
+
+<iframe
+  src="assets/plot4.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+Against our significance level of .05, we fail to reject the null hypothesis. There is not enough evidence to conclude that the distribution of `side` is from when `goldat25` is missing and when it is not missing. 
 
 ### Hypothesis Testing
 
