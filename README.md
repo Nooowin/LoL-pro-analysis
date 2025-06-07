@@ -77,8 +77,31 @@ Below in the pivot table, we can see some interesting aggregates when we index o
 ```
 
 We created a pivot table showing total stats and objectives for blue and red side. Surprisingly, contrary to in-game logic, red seems to have better dragon control. However, blue outperforms red side in every other category: more barons, less deaths, more gold (overall and at 25), more heralds, more assists, and more kills.
+This is important because it suggests that being on blue side may have an association with better in-game statistics.
 
 ### Assessment of Missingness
+#### NMAR Analysis
+Columns I believe to be NMAR, Not Missing at Random, in my dataset (original LoL dataset) are the ban columns: **ban1**, **ban2**, **ban3**, **ban4**, and **ban5**. Some players may just choose not to ban any champions, so there are no visible trends in the dataset that indicate whether or not a value in one of these columns will be missing. There are unobserved reasons why these values are missing such as being forgetful, player intent, or maybe even strategy. 
+To make this MAR, Missing At Random, I could add a column named **used_bans** that records the number of bans a team uses (between 0-5). The missingness in the ban columns could then be explained by this newly introduced column, making it MAR.
+
+#### Missingness Dependency
+We are going to test if the missingness of `goldat25` depends on other columns. Namely, we will be looking at `gamelength` and `side`.
+We choose a significance level, or alpha, of .05 when we conduct the following missingness permutation tests.
+
+First, we will look at `goldat25` and `gamelength`
+
+**Null:**
+The mean of `gamelength` when `goldat25` is missing is the same as the mean of `gamelength` when `goldat25` is not missing
+
+**Alternate:**
+The mean of `gamelength` when `goldat25` is missing is NOT the same as the mean of `gamelength` when `goldat25` is not missing
+
+<iframe
+  src="assets/plot3.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ### Hypothesis Testing
 
